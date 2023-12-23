@@ -3,6 +3,7 @@ import { API_URL, API_URL1 } from '../API';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import logo from '../assets/kalviumBook_logos.png' 
 
 const BookList = () => {
     const [books, setBooks] = useState([]);
@@ -55,7 +56,7 @@ const BookList = () => {
             <div className='topContainer'>
                 <div className='navBar'>
                     <span className='navOption'>
-                        <div id='logoContainer'><img className='logo' src="./src/assets/kalviumBook_logos.png" alt="logo" />
+                        <div id='logoContainer'><img className='logo' src={logo} alt="logo" />
                             <span className='lName'>KALVIUM BOOKS</span></div>
                         {userData ? userData : (<button className='registerBtn'><Link to="/register">Register</Link></button>)}
 
