@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { get, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import './RegisterForm.css'
+import logo from '../assets/kalviumBook_logos.png'
 
 const RegisterForm = () => {
     const {
@@ -28,7 +29,7 @@ const RegisterForm = () => {
 
             </div>
             <div className='containerOne'>
-                    <img className='kbLogo' src="./src/assets/kalviumBook_logos.png"/>
+                    <img className='kbLogo' src={logo}/>
             </div>
             <div className='registerForm'>
                 <h1>Sign up for <span style={{ color: 'red', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Kalvium Books</span></h1>
