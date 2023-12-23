@@ -25,7 +25,7 @@ const BookList = () => {
             .catch((err) => {
                 console.log(err);
             });
-    }, []);
+    },[]);
 
     const handleSearch = async () => {
         const headers = {
