@@ -55,7 +55,7 @@ const BookList = () => {
             <div className='topContainer'>
                 <div className='navBar'>
                     <span className='navOption'>
-                        <div id='logoContainer'><img className='logo' src="./src/assets/kbLogo.png" alt="logo" />
+                        <div id='logoContainer'><img className='logo' src="./src/assets/kalviumBook_logos.png" alt="logo" />
                             <span className='lName'>KALVIUM BOOKS</span></div>
                         {userData ? userData : (<button className='registerBtn'><Link to="/register">Register</Link></button>)}
 
