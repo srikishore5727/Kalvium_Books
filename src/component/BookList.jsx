@@ -3,7 +3,7 @@ import { API_URL, API_URL1 } from '../API';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../App.css';
-import logo from '../assets/kalviumBook_logos.png' 
+import logo from '../assets/kalviumBook_logos.png'
 
 const BookList = () => {
     const [books, setBooks] = useState([]);
@@ -26,7 +26,7 @@ const BookList = () => {
             .catch((err) => {
                 console.log(err);
             });
-    },[]);
+    }, []);
 
     const handleSearch = async () => {
         const headers = {
@@ -47,9 +47,13 @@ const BookList = () => {
             }, []);
     };
 
-    const filteredBooks = inputs!=="" ? searchResults : books;
+    const filteredBooks = inputs !== "" ? searchResults : books;
 
-    const userData = localStorage.getItem("userData") ? <div style={{color:"white",fontWeight:"bold",fontSize:'20px',width:'200px',color:'red',fontFamily:'monospace',textAlign:'center'}}>Hello {localStorage.getItem("userData") }</div> : ""
+    const userData = localStorage.getItem("userData") ? <div style={{ color: "white", fontWeight: "bold", fontSize: '20px', width: '200px', color: 'red', fontFamily: 'monospace', textAlign: 'center' }}>Hello {localStorage.getItem("userData")}</div> : ""
+
+    const getRandomRating = () => {
+        return (Math.random() * 2 + 3).toFixed(1);
+      };
 
     return (
         <>
@@ -90,11 +94,13 @@ const BookList = () => {
                         ) : (
                             <img className='bookImg' alt="No Thumbnail" />
                         )}
-                        <p style={{fontFamily:'sans-serif'}}>{book.title}</p>
-
+                        <p style={{ fontFamily: 'sans-serif' }}>{book.title}</p>
+                        <p>
+                            <span style={{ color: 'gold' }}>&#9733;</span> {book.averageRating ? `${book.averageRating} / 5` : `${getRandomRating()} / 5`}
+                        </p>                       
                         <button id='freeBtn'>FREE</button>
                     </div>
-                ))) : <div style={{color:'red',fontSize:'50px'}}>Oops! Sorry not available</div>}
+                ))) : <div style={{ color: 'red', fontSize: '50px' }}>Oops! Sorry not available</div>}
             </div>
         </>
     );
